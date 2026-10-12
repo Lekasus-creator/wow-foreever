@@ -1,22 +1,26 @@
-# WoW Forever – Gruppenportal
+# WoW Forever – Horde-Gruppenportal
 
-**Aktueller Stand:** 10. Oktober 2026 · Version 2.4 · Deutsch
+**Aktuelle Gruppenansicht: [Portal 3.0 öffnen](./portal.html)**
 
-Das [mobilfreundliche Gruppenportal](./index.html) organisiert die feste Vierergruppe auf 13 Etappen von Stufe 1 bis 60. Grundlage sind gemeinsame Abende von 2–3 Stunden mit Vorrang für gemeinsames Erleben gegenüber Leveltempo.
+Hier organisieren wir fünf Horde-Spieler auf ihrem gemeinsamen Weg von Stufe **1 bis 60**. Wir spielen entspannt **2–3 Stunden je Abend**. Spaß, Gruppenabsprachen, Questketten und die gemeinsame Reise haben Vorrang vor maximaler Levelgeschwindigkeit.
 
-Die vier Rollen: untoter Schutz-Paladin (Tank), Tauren-Druide (Heiler), untoter Hexenmeister (Schaden und Kontrolle), Tauren-Jäger (Schaden und Begleiter). Die ersten Level werden in zwei Startteams gespielt; der erste Gruppentreffpunkt ist das Wegekreuz im Brachland.
+## Die beiden Bereiche
 
-## Das Portal verwenden
+- **[Neue Gruppenansicht (portal.html)](./portal.html):** persönlicher Login ohne Registrierung, Aktuelles mit Begrüßung, fünf dynamische Spieler- und Klassen-Reiter, individuelle Dungeon-Vorbereitungslisten mit gespeicherten Häkchen, Gruppen-To-dos, Berufe, Terminabstimmungen und Wünsche.
+- **[Ausführliches Bestands-Handbuch (index.html)](./index.html):** deutschsprachige Questreisen, Klassenübersichten, Ausrüstung und **138 vorhandene Aufgaben-Kennungen** samt Supabase-Fortschritt. Dieses Handbuch bleibt absichtlich unverändert erhalten und ist auch im neuen Portal eingebettet.
 
-- Die Datei `index.html` ist die zentrale, vollständige Fassung. In GitHub über „Raw“ herunterladen oder bei aktivierten GitHub Pages im Browser nutzen.
-- Jede Etappe enthält Reisen, Abendprogramme, Klassen- und Dungeontermine, Pflicht- und optionale Aufgaben. Klassenseiten und Addon-Reiter enthalten zusätzliche Checklisten.
-- Die Häkchen aller vier Spieler werden auf Supabase synchronisiert, wenn eine Internetverbindung besteht. Ohne Verbindung werden Änderungen lokal vorgemerkt. **Freitextnotizen werden nicht synchronisiert**, sondern bleiben auf dem jeweiligen Gerät.
-- Es gibt 138 stabile Aufgabenkennungen. Bei Aktualisierungen die bestehenden `data-save`-Kennungen nicht umbenennen oder löschen, ohne vorher die Supabase-Aufgabenliste und den gemeinsamen Fortschritt zu migrieren.
-- Zugang per Passwortmaske ist lediglich eine Komfort-Hürde im Browser, **kein Geheimnisschutz**. Der Repository-Inhalt ist öffentlich; keine persönlichen Informationen, Namen, Termine, E-Mail-Adressen, Passwörter oder anderen vertraulichen Daten eintragen.
-- Supabase unterstützt bewusst eine öffentlich beschreibbare gemeinsame Spiel-Checkliste. Ein Dritter könnte die Häkchen manipulieren. Keine sensiblen Daten hinterlegen; stärkere Schreibrechte erfordern ein echtes Anmeldeverfahren, nicht die Passwortmaske.
+Die persönliche Anmeldung erfolgt mit den fünf bereits privat verteilten Benutzernamen und Kennwörtern. Die Zugangsdaten werden nicht im öffentlichen Quellcode gespeichert. Volk, Klasse, Rolle und Stufe können nach der Anmeldung selbst geändert werden; nur für die Horde zugelassene Kombinationen sind wählbar.
 
-## Quellen und Planungsstatus
+## Gemeinsame Organisation und Datenschutz
 
-Offizielle Patchnotes, Dungeongrenzen und aktuelle Guides sind innerhalb des Portals direkt verlinkt. Am 10. Oktober 2026 reicht der verifizierbare Beta-Stufenbereich bis 30; Details für 31–60 sind ausdrücklich als Plan gekennzeichnet. Beta-, Datamining- und Classic-Wissen werden nicht pauschal als endgültige Forever-Fakten dargestellt.
+Der gemeinsame Fortschritt, die Verbesserungsvorschläge, Abendaufgaben, Berufe und Terminstimmen werden im bestehenden Supabase-Projekt mit Row Level Security (RLS) verwaltet. Dungeon-Checklisten sind je Spieler persönlich. In den Spielprofilen dürfen nur Spiel-Pseudonyme und Spielinhalte stehen, keine echten Namen, Adressen oder privaten Kontaktdaten.
 
-Die organisierte wöchentliche Aktualisierung erfolgt anhand belastbarer neuer Informationen. Der jüngste GitHub-Commit gibt den technischen Versionsstand wieder.
+Das öffentliche GitHub-Repository und GitHub Pages sind öffentlich lesbar. Authentifizierte Spieldaten werden nur nach erfolgreicher Anmeldung geladen. Passwörter und privilegierte Schlüssel gehören niemals in diese Dateien.
+
+## Regelmäßige Pflege
+
+Alle zwei Tage um 04:00 Uhr (Europe/Berlin) werden neue verlässliche Forever-Informationen und die offenen Gruppenwünsche auf sinnvolle Verbesserungen geprüft. Ein neues Klassenprofil erzeugt automatisch einen eigenen Spieler-Reiter. Änderungen aus der Beta werden als vorläufig gekennzeichnet.
+
+Quellen: [Offizielle Blizzard-Entwicklungsnotizen](https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-october-8/2360696/5) · [Zockify Forever-Dungeons](https://www.zockify.de/forever/dungeons/) · [Zockify Klassenguides](https://www.zockify.de/forever/).
+
+**Stand:** 12. Oktober 2026 · neue Gruppenansicht 3.0 · Deutsch.
