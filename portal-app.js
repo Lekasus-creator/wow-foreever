@@ -190,7 +190,7 @@ el('meeting-form').onsubmit=async e=>{e.preventDefault();try{await put('forever_
 async function loadWishes(){const box=el('wish-list');try{const data=await get('forever_wishes','select=category,message,status,created_at&order=created_at.desc&limit=100');box.replaceChildren();for(const x of data)box.append(block(x.category+' · '+x.status,x.message));if(!data.length)box.append(n('p','Noch keine Wünsche.'))}catch(err){showMessage('wish-result',err.message)}}
 el('wish-form').onsubmit=async e=>{e.preventDefault();try{await put('forever_wishes',{user_id:userid,category:el('wish-category').value,message:el('wish-text').value.trim()});e.target.reset();await loadWishes()}catch(err){showMessage('wish-result',err.message)}};
 let book=false;
-function loadBook(){if(book)return;book=true;const frame=n('iframe');frame.src='index.html';frame.title='Bisheriges vollständiges Gruppenhandbuch';frame.loading='lazy';el('book-frame').append(frame)}
+function loadBook(){if(book)return;book=true;const frame=n('iframe');frame.src='handbuch.html';frame.title='Bisheriges vollständiges Gruppenhandbuch';frame.loading='lazy';el('book-frame').append(frame)}
 el('book-btn').onclick=loadBook;
 window.addEventListener('focus',()=>{if(own)refreshTeam().catch(()=>{})});
 if(sess)begin().catch(err=>{signout();showMessage('login-result','Bitte erneut anmelden: '+err.message)});
