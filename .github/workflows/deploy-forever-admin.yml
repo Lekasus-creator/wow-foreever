@@ -23,3 +23,7 @@ jobs:
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: supabase functions deploy forever-member-admin --project-ref tsfjsbjjqfpaaizikunv --use-api --debug
+      - name: Login-Funktion für neue Mitglieder bereitstellen
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: supabase functions deploy forever-login --project-ref tsfjsbjjqfpaaizikunv --use-api --no-verify-jwt
