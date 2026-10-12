@@ -269,7 +269,7 @@ const classBuilds={
  Krieger:{Tank:{tree:'Schutz für zähe Dungeonkämpfe; geeignete Talente aus Waffen/Furor beim Leveln',stats:'Ausdauer → Rüstung/Verteidigung → Trefferchance → Stärke',rotation:'Verteidigungshaltung → Bedrohung aufbauen → mehrere Gegner binden → defensive Abklingzeiten',prof:'Bergbau + Schmiedekunst'},Schaden:{tree:'Waffen oder Furor je nach Waffe und Tempo',stats:'Trefferchance → Stärke → kritische Trefferchance → Ausdauer',rotation:'Wut aufbauen → Hauptangriffe → Unterbrechen → Bedrohung beachten',prof:'Bergbau + Schmiedekunst'}}
 };
 const classQuestHints={
- Paladin:['Klassen- und Waffenquests bei den Paladinlehrern regelmäßig prüfen','Burg Schattenfang: persönliche Paladin-Dungeonquest prüfen'],
+ Paladin:['Klassen- und Waffenquests bei den Paladinlehrern regelmäßig prüfen','Burg Schattenfang: nur bestätigte Horde-Klassenquests prüfen'],
  Hexenmeister:['Dämonenbeschwörungen und neue Begleiterfähigkeiten regelmäßig freischalten','Burg Schattenfang: persönliche Hexenmeister-Dungeonquest prüfen'],
  Druide:['Bärengestalt und spätere Gestalten über die Klassenquests freischalten','Klassenlehrer und Mondlichtung besuchen'],
  Jäger:['Begleiter-/Zähmen-Questreihe früh erledigen','Begleiterfähigkeiten und Futter regelmäßig prüfen'],
@@ -299,9 +299,17 @@ const earlyQuests={
  ],
  'Burg Schattenfang':[
   {title:'Das Buch von Ur',source:'Bewahrer Bel’dugur · Unterstadt'},
-  {title:'Arugal muss sterben',source:'Horde · Silberwald'},
-  {title:'Paladin-Klassenquest',cls:'Paladin',source:'Klassenquest – genaue Voraussetzungen im Guide prüfen'},
-  {title:'Hexenmeister-Klassenquest',cls:'Hexenmeister',source:'Klassenquest – genaue Voraussetzungen im Guide prüfen'}
+  {title:'Arugal muss sterben',source:'Dalar Dawnweaver · Silberwald'},
+  {title:'Todespirscher in Shadowfang',source:'Hochexekutor Hadrec · Silberwald'},
+  {title:'Die Kugel von Soran’ruk',cls:'Hexenmeister',source:'Doan Karhan · Brachland · ab Stufe 20'}
+ ],
+ 'Ruinen von Lordaeron':[
+  {title:'Der Zorn von Rath’mael',source:'Todeswache Kristof · Tirisfal'},
+  {title:'Gerechtigkeit des Lichts',source:'Morbin Lightbane · Unterstadt'},
+  {title:'Eine verängstigte Bitte',source:'Tabitha Heartweaver · Silberwald'},
+  {title:'Die neue Seuche',source:'Theodore Griffs · Unterstadt'},
+  {title:'Endlose Qual',source:'Start über Gegenstand von Baron im Dungeon',inside:true},
+  {title:'Wappen von Lordaeron',source:'Gegenstand aus dem Dungeon · Start vor Ort',inside:true}
  ]
 };
 function isAdmin(){return own?.slot===1}
