@@ -37,6 +37,22 @@ const dungeons=[
 ['Schwarzfelstiefen',48,'Schwarzfels'],['Düsterbruch',54,'Feralas'],
 ['Schwarzschlundfeste',55,'Azshara'],['Stratholme',55,'Pestländer'],['Scholomance',57,'Pestländer'],
 ['Terrasse des Formers',58,'Krater von Un’Goro']];
+const questExtras={
+'Ragefireabgrund':['Horde: Verborgene Feinde (Thrall) vorbereiten','Horde: Vernichtung der Bestie (Neeru) annehmen','Horde: Die Macht der Zerstörung (Unterstadt) prüfen'],
+'Ruinen von Lordaeron':['Horde: Der Zorn von Rath’mael annehmen','Horde: Gerechtigkeit des Lichts annehmen'],
+'Höhlen des Wehklagens':['Horde: Anführer der Giftzähne nach Oasen-Questreihe','Horde: Schlangenflaum in Donnerfels annehmen','Klugheitstränke nach Raptorhörnern vorbereiten'],
+'Burg Schattenfang':['Horde: Das Buch von Ur in Unterstadt annehmen','Horde: Arugal muss sterben prüfen','Paladin/Hexenmeister: Klassenquest prüfen'],
+'Scharlachrotes Kloster':['Horde: Vorrels Rache und Test der Lehre prüfen'],
+'Dalaran':['Horde: Kanalisationsschlüssel von Dalaran beschaffen']
+};
+const dungeonLinks={
+'Ragefireabgrund':'https://www.zockify.de/forever/dungeons/ragefireabgrund/',
+'Ruinen von Lordaeron':'https://www.zockify.de/forever/dungeons/ruinen-von-lordaeron/',
+'Höhlen des Wehklagens':'https://www.zockify.de/forever/dungeons/hoehlen-des-wehklagens/',
+'Burg Schattenfang':'https://www.zockify.de/forever/dungeons/burg-shadowfang/',
+'Scharlachrotes Kloster':'https://www.zockify.de/forever/dungeons/scharlachrotes-kloster/',
+'Dalaran':'https://www.zockify.de/forever/dungeons/dalaran/'
+};
 function n(tag,txt,cls){const o=document.createElement(tag);if(txt!==undefined)o.textContent=String(txt);if(cls)o.className=cls;return o}
 function btn(text,action){const o=n('button',text,'smallbtn');o.type='button';o.onclick=action;return o}
 function block(t,d,control){const o=n('div',undefined,'entry'),i=n('div',undefined,'grow');i.append(n('strong',t),n('p',d));o.append(i);if(control)o.append(control);return o}
@@ -136,13 +152,13 @@ async function loadDungeons(){
  for(const [name,level,location] of dungeons){
  const card=n('article',undefined,'card');card.append(n('h3',name+' · Richtwert '+level),n('p',location+' · Zugangsbedingungen im Spiel prüfen'));
  const items=['Dungeon- und Vorquests angenommen','Eingang und Anreise geklärt','Vorräte und Reparaturen vorbereitet','Beuteprioritäten abgestimmt'];
- if(name==='Höhlen des Wehklagens')items.push('Horde: Anführer der Giftzähne und Schlangenflaum geprüft');
+ if(questExtras[name])items.push(...questExtras[name]);
  for(const item of items){
  const lab=n('label',undefined,'check'),cb=n('input');cb.type='checkbox';cb.checked=data.some(x=>x.dungeon===name&&x.item===item&&x.checked);
  cb.onchange=async()=>{const v=cb.checked;try{await put('forever_dungeon_checks',{user_id:userid,dungeon:name,item,checked:v},'?on_conflict=user_id,dungeon,item')}catch(e){cb.checked=!v;showMessage('general',e.message)}};
  lab.append(cb,n('span',item));card.append(lab);
  }
- const link=n('a','Quests, Eingang und Loot bei Zockify');link.href=name==='Höhlen des Wehklagens'?'https://www.zockify.de/forever/dungeons/hoehlen-des-wehklagens/':'https://www.zockify.de/forever/dungeons/';link.target='_blank';link.rel='noopener noreferrer';card.append(link);box.append(card);
+ const link=n('a','Quests, Eingang und Loot bei Zockify');link.href=dungeonLinks[name]||'https://www.zockify.de/forever/dungeons/';link.target='_blank';link.rel='noopener noreferrer';card.append(link);box.append(card);
  }
  }catch(err){box.textContent=err.message}
 }
