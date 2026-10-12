@@ -236,6 +236,7 @@ function logout(){sess=own=userid=null;team=[];sessionStorage.removeItem('foreve
 try{sess=JSON.parse(sessionStorage.getItem('forever-auth-v2')||'null')}catch(e){}
 async function token(){if(!sess?.access_token)return null;if(Date.now()>(sess.expires_at||0)-90000){const r=await fetch(BASE+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:{apikey:KEY,'Content-Type':'application/json'},body:JSON.stringify({refresh_token:sess.refresh_token})});if(!r.ok){logout();return null}save(await r.json())}return sess.access_token}
 async function api(path,method='GET',payload,auth=true,extra={}){
+ if(window.ForeverMaintenance?.blocked)throw Error('Das Portal ist während der Wartung nicht verfügbar.');
  const h={apikey:KEY,'Content-Type':'application/json',...extra};if(auth){const t=await token();if(!t)throw Error('Bitte erneut anmelden');h.Authorization='Bearer '+t}
  const r=await fetch(BASE+path,{method,headers:h,body:payload===undefined?undefined:JSON.stringify(payload),cache:'no-store'});
  let d=null;try{d=await r.json()}catch(e){}if(!r.ok)throw Error(d?.message||d?.error_description||d?.error||('HTTP '+r.status));return d;
@@ -386,5 +387,18 @@ async function loadWishes(){const box=el('wish-list');try{const [data,comments]=
 el('wish-form').onsubmit=async e=>{e.preventDefault();try{await put('forever_wishes',{user_id:userid,category:el('wish-category').value,message:el('wish-text').value.trim()});e.target.reset();await loadWishes()}catch(err){message('wish-result',err.message)}};
 const adminForm=el('admin-form');if(adminForm)adminForm.onsubmit=async e=>{e.preventDefault();if(!isAdmin())return;const uname=el('admin-user').value.trim().toLowerCase(),password=el('admin-password').value;message('admin-result','Account wird angelegt …');try{const result=await api('/functions/v1/forever-member-admin','POST',{username:uname,password});message('admin-result','✓ '+result.username+' erstellt. Gib das Passwort dem Spieler über einen sicheren Kanal.');adminForm.reset();await refreshTeam()}catch(err){message('admin-result','Account konnte nicht erstellt werden: '+err.message)}};
 window.addEventListener('focus',()=>{if(own)refreshTeam().catch(()=>{})});
-if(sess)begin().catch(err=>{logout();message('login-result','Bitte erneut anmelden: '+err.message)});
+function bootAfterMaintenance(){
+ if(!sess || window.ForeverMaintenance?.blocked)return;
+ begin().catch(err=>{
+  if(window.ForeverMaintenance?.blocked)return;
+  logout();
+  message('login-result','Bitte erneut anmelden: '+err.message);
+ });
+}
+document.addEventListener('forever-maintenance-end',()=>{
+ if(!sess || window.ForeverMaintenance?.blocked)return;
+ if(!own)bootAfterMaintenance();
+ else refreshTeam().catch(()=>{});
+});
+Promise.resolve(window.ForeverMaintenance?.ready).then(bootAfterMaintenance).catch(bootAfterMaintenance);
 })();
