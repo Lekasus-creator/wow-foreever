@@ -1,7 +1,7 @@
 /* WoW Forever Wartungsanzeige – Europe/Berlin */
 (function(){
 'use strict';
-const API='https://tsfjsbjjqfpaaizikunv.supabase.co/rest/v1/forever_site_maintenance?select=enabled,expires_at,started_at,last_completed_at&id=eq.1';
+const API='https://tsfjsbjjqfpaaizikunv.supabase.co/rest/v1/forever_site_maintenance?select=enabled,expires_at,started_at,last_completed_at,planned_start_at&id=eq.1';
 const KEY='sb_publishable_UOC11ecblHgQ1KErkraWBQ_7HuXJeyA';
 const warning=document.getElementById('maintenance-warning');
 const countdown=document.getElementById('maintenance-countdown');
@@ -20,12 +20,15 @@ function render(){
   const day=Math.round((Date.UTC(d.year,d.month-1,d.day)-Date.UTC(2026,9,12))/86400000);
   const seconds=d.hour*3600+d.minute*60+d.second;
   const remaining=4*3600-seconds;
-  const shortly=day>=0 && day%2===0 && remaining>0 && remaining<=300;
+  const plannedLeft=server.planned_start_at ? Math.ceil((Date.parse(server.planned_start_at)-Date.now())/1000) : null;
+  const manual=plannedLeft!==null && plannedLeft>0 && plannedLeft<=300;
+  const shortly=manual||(day>=0 && day%2===0 && remaining>0 && remaining<=300);
   warning.hidden=blocked||!shortly;
   if(shortly&&!blocked&&countdown){
-   const minutes=String(Math.floor(remaining/60)).padStart(2,'0');
-   const secondsLeft=String(remaining%60).padStart(2,'0');
-   countdown.textContent='In '+minutes+':'+secondsLeft+' Minuten startet die geplante Wartung um 04:00 Uhr (Berlin). Bitte offene Eingaben speichern.';
+   const left=manual?plannedLeft:remaining;
+   const minutes=String(Math.floor(left/60)).padStart(2,'0');
+   const secondsLeft=String(left%60).padStart(2,'0');
+   countdown.textContent='In '+minutes+':'+secondsLeft+' Minuten beginnt die Wartung. Bitte offene Eingaben speichern.';
   }
  }
  if(previous&&!blocked)document.dispatchEvent(new Event('forever-maintenance-end'));
