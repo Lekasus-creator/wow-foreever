@@ -1,0 +1,32 @@
+[
+  {
+    "date": "2026-10-18",
+    "title": "Zusätzliche Charaktere je Spieler anlegen und bearbeiten",
+    "description": "Im eigenen Reiter gibt es nun weitere Charaktere mit Klasse, Volk, Rolle und Stufe; jeder kann eigene Zusatzcharaktere ändern oder löschen.",
+    "commit": null
+  },
+  {
+    "date": "2026-10-18",
+    "title": "Tägliche Updates und täglicher 03:55-Uhr-Hinweis",
+    "description": "Der Updateauftrag wurde von zwei Tagen auf jeden Tag um 04:00 Uhr umgestellt. Die Wartungswarnung wird ebenfalls täglich angezeigt.",
+    "commit": null
+  },
+  {
+    "date": "2026-10-18",
+    "title": "Selbst gewählte Talentbäume mit Talent-Empfehlungen",
+    "description": "27 Spielstile für neun Klassen mit selbst gewählter Spezialisierung und den bislang erfassten Talentpunktfolgen.",
+    "commit": "60914a5e3ed849775a42a62713095c2d4727b65a"
+  },
+  {
+    "date": "2026-10-18",
+    "title": "Eigene Klassenquests abhaken",
+    "description": "Klassenquests werden persönlich angezeigt; Fortschritt angenommen oder erledigt ist kontogebunden gespeichert.",
+    "commit": "60914a5e3ed849775a42a62713095c2d4727b65a"
+  },
+  {
+    "date": "2026-10-18",
+    "title": "Fünfminütige Vorwarnung vor außerplanmäßigen Updates",
+    "description": "Wartung ist nun auch außerhalb des regulären 04:00-Uhr-Fensters vorher ankündbar.",
+    "commit": "effb14d93cab5107708517e240e0ca595055337b"
+  }
+]

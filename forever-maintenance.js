@@ -22,7 +22,7 @@ function render(){
   const remaining=4*3600-seconds;
   const plannedLeft=server.planned_start_at ? Math.ceil((Date.parse(server.planned_start_at)-Date.now())/1000) : null;
   const manual=plannedLeft!==null && plannedLeft>0 && plannedLeft<=300;
-  const shortly=manual||(day>=0 && day%2===0 && remaining>0 && remaining<=300);
+  const shortly=manual||(day>=0 && remaining>0 && remaining<=300);
   warning.hidden=blocked||!shortly;
   if(shortly&&!blocked&&countdown){
    const left=manual?plannedLeft:remaining;
