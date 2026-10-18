@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-18",
+    "title": "Offizielle Beta-Hinweise direkt auf der Startseite",
+    "description": "Stresstest am 19. Oktober um 19 Uhr MESZ und Blizzards Änderungen vom 15./16. Oktober zu Dungeonquests, Klassen und Volksfähigkeiten – mit Originalquellen.",
+    "commit": null
+  },
+  {
+    "date": "2026-10-18",
     "title": "Zusätzliche Charaktere je Spieler anlegen und bearbeiten",
     "description": "Im eigenen Reiter gibt es nun weitere Charaktere mit Klasse, Volk, Rolle und Stufe; jeder kann eigene Zusatzcharaktere ändern oder löschen.",
     "commit": null

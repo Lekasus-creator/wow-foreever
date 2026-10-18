@@ -26,4 +26,9 @@ async function render(){
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',render);else render();
 document.addEventListener('forever-maintenance-end',render);
+function loadBetaNotes(){
+ if(document.querySelector('script[src*="forever-beta-notices.js"]'))return;
+ const script=document.createElement('script');script.src='forever-beta-notices.js?v=1';script.defer=true;document.head.append(script);
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',loadBetaNotes);else loadBetaNotes();
 })();
