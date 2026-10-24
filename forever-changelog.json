@@ -1,8 +1,14 @@
 [
   {
+    "date": "2026-10-24",
+    "title": "Beta-Ende und kommende Starttermine aktualisiert",
+    "description": "Startseite zeigt das Beta-Ende am 23. Oktober, den Stresstest vom 21. Oktober, die Namensreservierung ab 27. Oktober und den Release am 5. November. Unbestätigte Inhalte über Stufe 30 sind ausdrücklich gekennzeichnet.",
+    "commit": null
+  },
+  {
     "date": "2026-10-18",
     "title": "Offizielle Beta-Hinweise direkt auf der Startseite",
-    "description": "Stresstest am 19. Oktober um 19 Uhr MESZ und Blizzards Änderungen vom 15./16. Oktober zu Dungeonquests, Klassen und Volksfähigkeiten – mit Originalquellen.",
+    "description": "Ursprünglich für den 19. Oktober angekündigter Stresstest (später auf den 21. Oktober verschoben) und Blizzards Änderungen vom 15./16. Oktober zu Dungeonquests, Klassen und Volksfähigkeiten – mit Originalquellen.",
     "commit": null
   },
   {
