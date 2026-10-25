@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-10-25",
+    "title": "Gemeinsames Regelset und genaue Namensreservierung erklärt",
+    "description": "Startseite nennt Blizzards Termin am 27. Oktober um 18:00 Uhr MEZ, die Begrenzung auf drei frühe Namensreservierungen und die wichtige Einschränkung: Dungeon-Gruppen funktionieren nur innerhalb desselben Regelsets.",
+    "commit": "54dc749fc041144e6338f2a7421669807ac4cacf"
+  },
+  {
+    "date": "2026-10-25",
+    "title": "Abgeschlossene Wünsche gegen erneutes Öffnen geschützt",
+    "description": "Die serverseitige Wunschaktion erlaubt Nachbesserung nur vor der Bestätigung; bereits geschlossene Wünsche können weder durch den Einreicher noch durch Admin-Statusaktionen wieder geöffnet werden. Bestehende Wunschstatus bleiben unverändert.",
+    "commit": "2e65fa3fdf9c95623211c91d4f8524a9b57e6732"
+  },
+  {
     "date": "2026-10-24",
     "title": "Beta-Ende und kommende Starttermine aktualisiert",
     "description": "Startseite zeigt das Beta-Ende am 23. Oktober, den Stresstest vom 21. Oktober, die Namensreservierung ab 27. Oktober und den Release am 5. November. Unbestätigte Inhalte über Stufe 30 sind ausdrücklich gekennzeichnet.",
