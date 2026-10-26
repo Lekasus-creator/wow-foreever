@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-10-26",
+    "title": "Talentguide reagiert auf Klassen-, Volks- und Stufenwechsel",
+    "description": "Im eigenen Charakterreiter wird der Talent- und Klassenquestbereich bei Änderungen der Profildaten neu aufgebaut. Die Spezialisierung wird ausschließlich aus der kontogebundenen Auswahl geladen; bei Speicherfehlern wird die zuletzt bestätigte Wahl wiederhergestellt. JavaScript-Syntax und fünf Zustandswechsel-Szenarien wurden geprüft; ein echter Benutzerbrowser-Test steht noch aus.",
+    "commit": "42fb4b9f99e746dae518d8b67801177ae502139d"
+  },
+  {
+    "date": "2026-10-26",
+    "title": "Offizieller Horde-Zugang zu Dalaran ergänzt",
+    "description": "Die Startseite verweist auf Blizzards neun neue Dungeons und nennt für Horde-Spieler die beiden Einstiegsquests der Dalaran-Zugangsreihe samt Questgeber in Tarrens Mühle. Nicht belegte Mindeststufen bleiben ausdrücklich offen.",
+    "commit": "6acc2cad1e71d6540bf37f9d0de0e63f540d8adc"
+  },
+  {
     "date": "2026-10-25",
     "title": "Gemeinsames Regelset und genaue Namensreservierung erklärt",
     "description": "Startseite nennt Blizzards Termin am 27. Oktober um 18:00 Uhr MEZ, die Begrenzung auf drei frühe Namensreservierungen und die wichtige Einschränkung: Dungeon-Gruppen funktionieren nur innerhalb desselben Regelsets.",
