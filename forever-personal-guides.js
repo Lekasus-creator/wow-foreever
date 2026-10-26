@@ -153,12 +153,18 @@ function identityFromPage(page){
 }
 async function render(){
  const page=getOwnPage(),character=page&&identityFromPage(page);
- if(!page||!character?.klasse)return;
+ const oldBox=page?.querySelector('.forever-new-guide');
+ if(!page||!character?.klasse){
+  if(oldBox){++renderSerial;oldBox.remove()}
+  return;
+ }
+ const signature=JSON.stringify([character.klasse,character.volk,character.stufe]);
+ if(oldBox?.dataset.guideSignature===signature)return;
  const serial=++renderSerial;
  replaceLegacy(page);
- let box=page.querySelector('.forever-new-guide');
- if(box)return;
- box=E('section',undefined,'card forever-new-guide');
+ if(oldBox)oldBox.remove();
+ const box=E('section',undefined,'card forever-new-guide');
+ box.dataset.guideSignature=signature;
  box.style.borderColor='#b59768';
  const target=page.querySelector('#personal-professions')?.closest('article')||null;
  if(target)page.insertBefore(box,target);else page.append(box);
@@ -175,8 +181,8 @@ async function render(){
   box.append(E('p','Wähle zuerst selbst, wie du spielen willst. Erst danach erscheint die konkrete Empfehlung. Du kannst deine Wahl jederzeit ändern.'));
   const description=E('div',undefined,'grid');
   const stored=styleRows.find(x=>x.klasse===character.klasse)?.spezialisierung||'';
-  const formerChoice=localStorage.getItem('forever-spec-'+page.id)||'';
-  const current=specsFor(character.klasse).includes(stored)?stored:(specsFor(character.klasse).includes(formerChoice)?formerChoice:'');
+  const current=specsFor(character.klasse).includes(stored)?stored:'';
+  let savedChoice=current;
   const sel=E('select');sel.setAttribute('aria-label','Persönliche Spezialisierung');
   sel.append(new Option('Spielstil selbst auswählen',''));
   for(const [name,desc] of Object.entries(treeDescriptions[character.klasse]||{})){
@@ -188,7 +194,7 @@ async function render(){
   box.append(description);
   box.append(E('h4','Meine Entscheidung'));
   sel.value=specsFor(character.klasse).includes(current)?current:'';
-  const saved=E('p',stored?'Deine Wahl ist in deinem Spielerkonto gespeichert.':(current?'Vorherige Gerätewahl gefunden. Bitte erneut auswählen, um sie im Spielerkonto zu speichern.':'Bitte wähle zunächst einen Talentbaum.'),'small');
+  const saved=E('p',stored?'Deine Wahl ist in deinem Spielerkonto gespeichert.':'Bitte wähle zunächst einen Talentbaum.','small');
   const saveButton=E('button','Diese Wahl im Konto speichern');saveButton.type='button';saveButton.className='primary';
   const selectionRow=row(box,sel,saveButton,saved);
   const result=E('div');box.append(result);
@@ -220,11 +226,12 @@ async function render(){
   async function saveChoice(){
     sel.disabled=true;saveButton.disabled=true;saved.textContent='Speichere Auswahl …';
     try{
-      if(!sel.value){sel.value=current;saved.textContent='Wähle einen Talentbaum, um deinen gespeicherten Spielstil zu ändern.';return}
+      if(!sel.value){sel.value=savedChoice;saved.textContent='Wähle einen Talentbaum, um deinen gespeicherten Spielstil zu ändern.';return}
       await upsert('forever_character_styles',{user_id:who,klasse:character.klasse,spezialisierung:sel.value,updated_at:new Date().toISOString()},'user_id');
+      savedChoice=sel.value;
       saved.textContent='✓ Spielstil dauerhaft im Spielerkonto gespeichert';
       displayPlan(sel.value);
-    }catch(error){sel.value=current;saved.textContent='Speicherung fehlgeschlagen: '+error.message}
+    }catch(error){sel.value=savedChoice;displayPlan(savedChoice);saved.textContent='Speicherung fehlgeschlagen: '+error.message}
     finally{sel.disabled=false;saveButton.disabled=false}
   }
   sel.onchange=saveChoice;saveButton.onclick=saveChoice;
@@ -286,4 +293,11 @@ document.addEventListener('DOMContentLoaded',()=>{
  schedule();
 });
 document.addEventListener('forever-maintenance-end',schedule);
+// Profiländerungen aktualisieren Stufenpunkte, Klassenquests und Talentbäume ohne Neuladen.
+document.addEventListener('input',event=>{
+ if(event.target?.matches('#profile [name="stufe"]'))schedule();
+});
+document.addEventListener('change',event=>{
+ if(event.target?.matches('#profile [name="klasse"], #profile [name="volk"], #profile [name="stufe"]'))schedule();
+});
 })();
