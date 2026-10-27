@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-10-27",
+    "title": "Vier Horde-Dalaranquests mit persönlichem Annahmestatus",
+    "description": "Dungeonreiter zeigt die vier von Zockify am 22. Oktober dokumentierten Horde-Quests ab Stufe 24 samt Questgebern und Aufgaben. Die Zugangsreihe für Das Herz der Störung hat vier einzeln abhakbare Vorquest-Schritte; vorhandene kontogebundene Dungeon-Häkchen bleiben unverändert. Syntax, Questdaten und GitHub-Dateigleichheit geprüft; ein echter angemeldeter Browser-Test steht aus.",
+    "commit": "f683cc7a366a53b52a7a037755935d65c82e726e"
+  },
+  {
     "date": "2026-10-26",
     "title": "Talentguide reagiert auf Klassen-, Volks- und Stufenwechsel",
     "description": "Im eigenen Charakterreiter wird der Talent- und Klassenquestbereich bei Änderungen der Profildaten neu aufgebaut. Die Spezialisierung wird ausschließlich aus der kontogebundenen Auswahl geladen; bei Speicherfehlern wird die zuletzt bestätigte Wahl wiederhergestellt. JavaScript-Syntax und fünf Zustandswechsel-Szenarien wurden geprüft; ein echter Benutzerbrowser-Test steht noch aus.",
