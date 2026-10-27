@@ -311,6 +311,12 @@ const earlyQuests={
   {title:'Die neue Seuche',source:'Theodore Griffs · Unterstadt'},
   {title:'Endlose Qual',source:'Start über Gegenstand von Baron im Dungeon',inside:true},
   {title:'Wappen von Lordaeron',source:'Gegenstand aus dem Dungeon · Start vor Ort',inside:true}
+ ],
+ 'Dalaran':[
+  {title:'Das Herz der Störung',source:'Abbild der Erzmagierin Modera · Alteracgebirge · ab Stufe 24; Abgabe bei Magus Wordeen Voidglare in Tarrens Mühle. Bei Annahme erhält die Horde den Kanalisationsschlüssel.',pre:['Gefängnis-Einbruch bei Magus Wordeen Voidglare in Tarrens Mühle','Schlüssel zur Stadt bei Magus Wordeen Voidglare in Tarrens Mühle','Patrouillen von Dalaran bei Magus Wordeen Voidglare abschließen','Blut in den Straßen beim Abbild der Erzmagierin Modera abgeben']},
+  {title:'Der Grabritter',source:'Melisara · Tarrens Mühle · ab Stufe 24; Atrexis den Grabritter in Dalaran besiegen.'},
+  {title:'Opportunistische Bildung',source:'Rexxie Copperclutch · nahe dem Horde-Eingang in Alterac · ab Stufe 24; „Die Gründung von Dalaran“ bergen.'},
+  {title:'Quelle der Macht',source:'Doktor Martin Felben · Unterstadt · ab Stufe 24; sechs gesprungene Wächterkerne aus Dalaran sammeln.'}
  ]
 };
 function isAdmin(){return own?.slot===1}
