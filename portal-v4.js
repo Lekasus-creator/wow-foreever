@@ -142,7 +142,7 @@ const stages=[
   "Ein offener Wüstenabschnitt mit selbst gewählten Begegnungen und Trollgeschichten.",
   "Zul’Farrak",
   42,
-  "https://www.zockify.de/forever/dungeons/",
+  "https://www.zockify.de/forever/dungeons/zul-farrak/",
   [
    "Alle Horde-, neutralen und Klassenquests mit der verlinkten Dungeonübersicht abgleichen"
   ]
@@ -155,7 +155,7 @@ const stages=[
   "Farbenfrohe Höhlen und wilde Küsten: erkundet nach Lust und Laune.",
   "Maraudon",
   42,
-  "https://www.zockify.de/forever/dungeons/",
+  "https://www.zockify.de/forever/dungeons/maraudon/",
   [
    "Alle Horde-, neutralen und Klassenquests mit der verlinkten Dungeonübersicht abgleichen"
   ]
@@ -223,7 +223,9 @@ const dungeonLinks={
 'Höhlen des Wehklagens':'https://www.zockify.de/forever/dungeons/hoehlen-des-wehklagens/',
 'Burg Schattenfang':'https://www.zockify.de/forever/dungeons/burg-shadowfang/',
 'Scharlachrotes Kloster':'https://www.zockify.de/forever/dungeons/scharlachrotes-kloster/',
-'Dalaran':'https://www.zockify.de/forever/dungeons/dalaran/'
+'Dalaran':'https://www.zockify.de/forever/dungeons/dalaran/',
+'Zul’Farrak':'https://www.zockify.de/forever/dungeons/zul-farrak/',
+'Maraudon':'https://www.zockify.de/forever/dungeons/maraudon/'
 };
 
 function n(tag,txt,cls){const x=document.createElement(tag);if(txt!==undefined)x.textContent=String(txt);if(cls)x.className=cls;return x}
@@ -311,6 +313,25 @@ const earlyQuests={
   {title:'Die neue Seuche',source:'Theodore Griffs · Unterstadt'},
   {title:'Endlose Qual',source:'Start über Gegenstand von Baron im Dungeon',inside:true},
   {title:'Wappen von Lordaeron',source:'Gegenstand aus dem Dungeon · Start vor Ort',inside:true}
+ ],
+ 'Zul’Farrak':[
+  {title:'Der Spinnengott',source:'Meister Gadrin · Sen’jin, Durotar · ab Stufe 40; Thekas Schrifttafel in Zul’Farrak lesen.',pre:['Giftflaschen im Hinterland finden und bei Apotheker Lydon abgeben','Unbeschädigter Giftbeutel bei Apotheker Lydon abgeben','Konsultiert Meister Gadrin in Sen’jin abgeben']},
+  {title:'Trollaushärter',source:'Trenton Lighthammer · Gadgetzan, Tanaris · ab Stufe 40; 20 Trollaushärter erbeuten.'},
+  {title:'Skarabäuspanzerschalen',source:'Tran’rek · Gadgetzan, Tanaris · ab Stufe 40; fünf unbeschädigte Skarabäusschalen sammeln.',pre:['Tran’rek bei Krazek im Schlingendorntal annehmen und bei Tran’rek in Gadgetzan abgeben']},
+  {title:'Tiara der Tiefen',source:'Tabetha · Marschen von Dustwallow · ab Stufe 40; Tiara von Wasserbeschwörerin Velratha erbeuten.'},
+  {title:'Die Prophezeiung von Mosh’aru',source:'Yeh’kinya · Tanaris · ab Stufe 40; beide Mosh’aru-Schrifttafeln von Theka und Velratha sammeln.',pre:['Kreischergeister bei Yeh’kinya abschließen']},
+  {title:'Wünschel-mato-Rute',source:'Chefingenieur Bilgewhizzle · Gadgetzan · ab Stufe 40; Rute von Sergeant Bly besorgen.'},
+  {title:'Gahz’rilla',source:'Wizzle Brassbolts · Schimmernde Ebene, Tausend Nadeln · ab Stufe 40; Gahz’rillas elektrisierte Schuppe besorgen.'}
+ ],
+ 'Maraudon':[
+  {title:'Schattensplitter',source:'Uthel’nay · Tal der Geister, Orgrimmar · ab Stufe 38; zehn Schattensplitter vor dem violetten Eingang sammeln.'},
+  {title:'Die Anweisungen des Pariahs',source:'Zentaurenpariah · südliches Desolace · ab Stufe 39; Amulett des namenlosen Propheten und fünf Khan-Edelsteine beschaffen.'},
+  {title:'Schlangenzunges Verderbnis',source:'Vark Battlescar · Shadowprey, Desolace · ab Stufe 41; Phiole am orangefarbenen Teich füllen und acht Gegner reinigen.'},
+  {title:'Dunkles Böses',source:'Willow · Desolace · ab Stufe 41; 25 theradrische Kristallschnitzereien sammeln.'},
+  {title:'Legenden von Maraudon',source:'Cavindra · orangefarbener Eingang · ab Stufe 41; Celebriandiamant und -griff sammeln, Celebras besiegen.'},
+  {title:'Das Szepter von Celebras',source:'Celebras der Erlöste · im Dungeon · ab Stufe 41; Ritual nach Legenden von Maraudon begleiten.',inside:true,pre:['Legenden von Maraudon bei Celebras dem Erlösten abgeben']},
+  {title:'Verderbnis von Erde und Samenkorn',source:'Selendra · südlich von Shadowprey, Desolace · ab Stufe 45; Prinzessin Theradras besiegen.'},
+  {title:'Samenkorn des Lebens',source:'Zaetars Geist · nach Prinzessin Theradras im Dungeon · ab Stufe 45; Samenkorn zu Bewahrer Remulos in Mondlichtung bringen.',inside:true}
  ],
  'Dalaran':[
   {title:'Das Herz der Störung',source:'Abbild der Erzmagierin Modera · Alteracgebirge · ab Stufe 24; Abgabe bei Magus Wordeen Voidglare in Tarrens Mühle. Bei Annahme erhält die Horde den Kanalisationsschlüssel.',pre:['Gefängnis-Einbruch bei Magus Wordeen Voidglare in Tarrens Mühle','Schlüssel zur Stadt bei Magus Wordeen Voidglare in Tarrens Mühle','Patrouillen von Dalaran bei Magus Wordeen Voidglare abschließen','Blut in den Straßen beim Abbild der Erzmagierin Modera abgeben']},
