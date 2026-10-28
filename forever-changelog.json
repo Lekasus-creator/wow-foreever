@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-10-28",
+    "title": "Horde-Questchecklisten für Zul’Farrak und Maraudon",
+    "description": "Sieben Horde-/neutrale Zul’Farrak-Quests ab Stufe 40 und acht Maraudon-Quests ab Stufe 38–45 stehen mit Questgebern, Aufgaben und persönlichen Annahme-Häkchen direkt im Dungeonreiter. Wichtige Vorquests sind separat abhakbar. Quellen: Zockify-Guides vom 27. Oktober; JavaScript-Syntax geprüft, angemeldeter Live-Browsertest offen.",
+    "commit": "371006af813f5865e569058df41f67936e81834f"
+  },
+  {
     "date": "2026-10-27",
     "title": "Vier Horde-Dalaranquests mit persönlichem Annahmestatus",
     "description": "Dungeonreiter zeigt die vier von Zockify am 22. Oktober dokumentierten Horde-Quests ab Stufe 24 samt Questgebern und Aufgaben. Die Zugangsreihe für Das Herz der Störung hat vier einzeln abhakbare Vorquest-Schritte; vorhandene kontogebundene Dungeon-Häkchen bleiben unverändert. Syntax, Questdaten und GitHub-Dateigleichheit geprüft; ein echter angemeldeter Browser-Test steht aus.",
