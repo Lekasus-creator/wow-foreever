@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-10-29",
+    "title": "Scharlachrotes Kloster: Horde- und Magierquests mit Zugangsprüfung",
+    "description": "Fünf von Zockify dokumentierte Horde-Quests und die Magierquest „Rituale der Macht“ stehen mit Mindeststufe, Questgeber, Ziel und bekannten Vorquests direkt in der Dungeonliste. „Kompendium der Gefallenen“ ist auf Orcs, Tauren und Trolle begrenzt; nicht berechtigte Charaktere können diese Quest nicht abhaken. Quellenstand Zockify 4. Oktober; JavaScript-Syntax, GitHub-Dateigleichheit und 138 Handbuch-IDs geprüft. GitHub-Pages-Abruf und echter angemeldeter Browser-Test nicht möglich.",
+    "commit": "c9614bed3136dccdf07ab59c1fd14741205b2975"
+  },
+  {
     "date": "2026-10-28",
     "title": "Horde-Questchecklisten für Zul’Farrak und Maraudon",
     "description": "Sieben Horde-/neutrale Zul’Farrak-Quests ab Stufe 40 und acht Maraudon-Quests ab Stufe 38–45 stehen mit Questgebern, Aufgaben und persönlichen Annahme-Häkchen direkt im Dungeonreiter. Wichtige Vorquests sind separat abhakbar. Quellen: Zockify-Guides vom 27. Oktober; JavaScript-Syntax geprüft, angemeldeter Live-Browsertest offen.",
