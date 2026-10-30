@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-10-30",
+    "title": "Offizielle Startinfos und tägliche Wartungsanzeige aktualisiert",
+    "description": "Die Startseite zeigt jetzt den von Blizzard bestätigten Europa-Start am 5. November um 00:00 Uhr MEZ, die zeitlich und auf berechtigte Accounts begrenzte Namensreservierung, neue Horde-Klassenoptionen und das Lagersystem. Die Wartungsseite nennt statt des veralteten Zweitagesturnus korrekt die tägliche 04:00-Uhr-Wartung. Die HTML-Dateien wurden identisch vorbereitet; echter Benutzerbrowser-Test steht weiterhin aus.",
+    "commit": null
+  },
+  {
     "date": "2026-10-29",
     "title": "Scharlachrotes Kloster: Horde- und Magierquests mit Zugangsprüfung",
     "description": "Fünf von Zockify dokumentierte Horde-Quests und die Magierquest „Rituale der Macht“ stehen mit Mindeststufe, Questgeber, Ziel und bekannten Vorquests direkt in der Dungeonliste. „Kompendium der Gefallenen“ ist auf Orcs, Tauren und Trolle begrenzt; nicht berechtigte Charaktere können diese Quest nicht abhaken. Quellenstand Zockify 4. Oktober; JavaScript-Syntax, GitHub-Dateigleichheit und 138 Handbuch-IDs geprüft. GitHub-Pages-Abruf und echter angemeldeter Browser-Test nicht möglich.",
